@@ -1,24 +1,37 @@
 {
   "name": "ultimate-proxy-system",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "main": "aiAnalyzer.js",
   "scripts": {
+    "start": "concurrently \"node autoUpdater.js\" \"node proxyChecker.js\" \"node proxyServer.js\" \"node dashboard.js\"",
+    "dev": "nodemon autoUpdater.js & nodemon proxyChecker.js & nodemon proxyServer.js & nodemon dashboard.js",
+    "postinstall": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["proxy", "scraper", "automation", "security"],
+  "author": "Saldy Ganteng",
   "license": "ISC",
-  "description": "",
+  "description": "Ultimate Proxy Scraper & Analyzer System",
   "dependencies": {
     "axios": "^1.7.9",
     "chalk": "^5.4.1",
     "cli-table3": "^0.6.5",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.21.2",
-    "fs": "^0.0.1-security",
     "geoip-lite": "^1.4.10",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
     "net": "^1.0.2",
+    "nodemon": "^3.0.2",
     "ora": "^8.2.0",
     "socks5-https-client": "^1.2.1",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
   }
 }
